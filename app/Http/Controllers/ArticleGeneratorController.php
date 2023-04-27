@@ -25,9 +25,10 @@ class ArticleGeneratorController extends Controller
         "frequency_penalty" => 0,
         "presence_penalty" => 0,
         'max_tokens' => 600,
-        'prompt' => sprintf('Write article about: %s', $title),
+        'prompt' => sprintf($title),
+        // 'prompt' => sprintf('Write article about: %s', $title),
     ]);
-
+    // dd($result);
     $content = trim($result['choices'][0]['text']);
 
 
